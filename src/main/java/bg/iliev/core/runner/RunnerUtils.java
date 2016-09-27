@@ -9,6 +9,7 @@ import org.reflections.Reflections;
 import bg.iliev.core.AssertExtended;
 import bg.iliev.core.annotations.TestConfiguration;
 import bg.iliev.core.configuration.WebDriverConfigurationOptions;
+import bg.iliev.core.exception.WebDriverConfigurationException;
 
 
 public class RunnerUtils {
@@ -28,17 +29,13 @@ public class RunnerUtils {
 				try {
 					result = (WebDriverConfigurationOptions) method.invoke(config.newInstance(), null);
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new WebDriverConfigurationException(e.getCause(), e.getMessage());
 				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new WebDriverConfigurationException(e.getCause(), e.getMessage());
 				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new WebDriverConfigurationException(e.getCause(), e.getMessage());
 				} catch (InstantiationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					throw new WebDriverConfigurationException(e.getCause(), e.getMessage());
 				}
 			}
 		}
