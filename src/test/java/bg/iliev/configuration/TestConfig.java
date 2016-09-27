@@ -6,12 +6,11 @@ import bg.iliev.core.configuration.WebDriverConfiguration;
 import bg.iliev.core.configuration.WebDriverConfigurationOptions;
 
 @TestConfiguration
-public class TestConfig extends WebDriverConfiguration{
+public class TestConfig implements WebDriverConfiguration{
 
-	@Override
 	public WebDriverConfigurationOptions setBrowserOptions() {
 		WebDriverConfigurationOptions options = new WebDriverConfigurationOptions();
-		options.setBrowserType(BrowserType.FIREFOX);
+		options.setBrowserType(BrowserType.CHROME);
 		return options;
 	}
 

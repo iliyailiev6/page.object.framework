@@ -2,6 +2,8 @@ package bg.iliev.core;
 
 import org.openqa.selenium.WebDriver;
 
+import bg.iliev.core.annotations.AbstractPage;
+
 
 /**
  * 
@@ -14,6 +16,8 @@ import org.openqa.selenium.WebDriver;
  * @author Iliya
  *
  */
+
+@AbstractPage
 public abstract class Page {
 
 	protected WebDriver driver;

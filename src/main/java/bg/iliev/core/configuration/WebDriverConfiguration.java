@@ -1,10 +1,10 @@
 package bg.iliev.core.configuration;
 
-public abstract class WebDriverConfiguration {
+public interface WebDriverConfiguration {
 
 	/**
 	 * Set some specific web driver options for your test project
 	 * 
 	 */
-	public abstract WebDriverConfigurationOptions setBrowserOptions();
+	public WebDriverConfigurationOptions setBrowserOptions();
 }

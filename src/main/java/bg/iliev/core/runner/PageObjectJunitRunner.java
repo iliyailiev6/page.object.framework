@@ -27,6 +27,9 @@ public class PageObjectJunitRunner extends BlockJUnit4ClassRunner{
 		super(clazz);
 		
 		RunnerUtils.handleBrowserType();
+		RunnerUtils.initDriver();
+		RunnerUtils.injectDriverInstance(getDescription());
 	}
 
+	
 }
